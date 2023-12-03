@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="lifegame"></section>
+  <div id="buttons">
+    <button type="button" onclick="game()">Start game</button>
+    <button type="button" onclick="clearFields()">Clear fields</button>
+  </div>
+  <div id="endgame">
+    <span>Game over</span>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript">
+/*
+  This global variable represents the size of the playing field.
+  You can change this variable to set the number of cells displayed.
+*/
+
+const fieldsAmount = 100;
+</script>
+
+<script src="./lifegame.js"></script>
+
+<style type="text/css">
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+#lifegame {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 0;
+  height: 0;
+}
+
+.field {
+  width: 50px;
+  height: 50px;
+  border: 1px dotted darkgray;
+  cursor: pointer;
+}
+
+.alive-field {
+  background-color: darkgray;
+}
+
+#buttons {
+  display: flex;
+  margin-top: 20px;
+  column-gap: 20px;
+}
+
+#endgame {
+  margin-top: 15px;
+  color: firebrick;
+  font-weight: bold;
+  font-size: 18px;
+  display: none;
+  position: relative;
+  width: 100px;
+}
+
+#endgame > span {
+  position: absolute;
+}
+
+button {
+  height: 30px;
+  cursor: pointer;
+}
+</style>
+
+<style type="text/css">
+/* reset css */
+  html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+</style>
